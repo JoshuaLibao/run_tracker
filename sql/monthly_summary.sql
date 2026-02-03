@@ -1,0 +1,22 @@
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "monthly_summary" (
+	"Month"	TEXT,
+	"Average Pace"	REAL,
+	"Slowest Pace"	REAL,
+	"Fastest Pace"	REAL,
+	"Longest run"	REAL,
+	"Total miles ran"	REAL
+);
+INSERT INTO "monthly_summary" VALUES ('January',8.35922147191231,10.7,6.84,13.1,161.5);
+INSERT INTO "monthly_summary" VALUES ('Feburary',8.97665267175573,10.9125,6.8,13.1,128.3);
+INSERT INTO "monthly_summary" VALUES ('March',8.83915167211923,11.3833333333333,6.63333333333333,13.1,204.6);
+INSERT INTO "monthly_summary" VALUES ('April',9.08229325699746,11.42,6.56488549618321,13.1,107.2);
+INSERT INTO "monthly_summary" VALUES ('May',8.60091236054022,10.92,6.75,13.1,180.5);
+INSERT INTO "monthly_summary" VALUES ('June',8.73162150127227,11.08,6.7,13.1,119.2);
+INSERT INTO "monthly_summary" VALUES ('July',8.39979509843311,10.8,6.5375,13.1,111.1);
+INSERT INTO "monthly_summary" VALUES ('August',9.691875,10.95,7.86,10.0,50.0);
+INSERT INTO "monthly_summary" VALUES ('September',7.91541666666667,8.8,6.62,6.0,16.0);
+INSERT INTO "monthly_summary" VALUES ('October',8.79216709075488,11.3,6.85,13.1,59.2);
+INSERT INTO "monthly_summary" VALUES ('November',8.89843370087645,10.66,7.28,13.1,61.2);
+INSERT INTO "monthly_summary" VALUES ('December',9.62907407407407,11.2,6.78,10.0,47.0);
+COMMIT;
