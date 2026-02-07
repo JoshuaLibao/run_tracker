@@ -5,7 +5,7 @@ A Python and SQL-based run tracking project that validates, enriches, and analyz
 This project demonstrates data cleaning, feature engineering, and SQL-based aggregation, providing insights such as pace, run types, and monthly summaries.
 
 ## Project Motivation
-Being a marathoner, I wanted to create a project that connects to that interest of mine, that being a run tracker. This allowed me to not only practice data processing with python(pandas) and sql but also relate the project to my personal interest.
+Being a marathoner, I wanted to create a project that reflects that interest, that being a run tracker. This allowed me to not only practice data processing with python(pandas) and sql but also relate the project to my personal interest.
 
 ## Technologies Used
     - Python 3.13.1
