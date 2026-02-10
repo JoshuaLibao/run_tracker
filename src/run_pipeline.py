@@ -14,20 +14,20 @@ valid_run = df[(df["distance"] != 0) & (df["time"] != 0)]
 pace = valid_run["time"] / valid_run["distance"]
 
 # New column for pace
-df['pace'] = pace
+valid_run['pace'] = pace
 
 # New column for run type
 cutoff = [0,4,6,10]
 labels = ["easy", "tempo", "hard"]
-df['run_type'] = pd.cut(df["rpe"], bins=cutoff, labels=labels)
+valid_run['run_type'] = pd.cut(df["rpe"], bins=cutoff, labels=labels)
 
 # average, fastest, slowest, total miles, count of each run type, longest run
 average = pace.mean()
 fastest = pace.min()
 slowest = pace.max()
-total_miles = df["distance"].sum()
-longest_run = df["distance"].max()
-number_run_types = df["run_type"].value_counts()
+total_miles = valid_run["distance"].sum()
+longest_run = valid_run["distance"].max()
+number_run_types = valid_run["run_type"].value_counts()
 
 #summary table to display features^^
 easy_runs = number_run_types["easy"]
@@ -51,7 +51,7 @@ summary_table.to_sql(
 )
 
 # runs_clean dataframe -> sql table
-df.to_sql(
+valid_run.to_sql(
     "runs_clean",
     conn,
     if_exists="replace",
@@ -89,4 +89,3 @@ monthly_summary.reset_index(inplace=True)
 monthly_summary.to_sql('monthly_summary', conn, if_exists='replace', index=False)
 
 conn.close()
-
